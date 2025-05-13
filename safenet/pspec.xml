@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pisilinux.org/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>safenetauthenticationclient</Name>
+        <Homepage>https://globalsign.com/en/</Homepage>
+        <Packager>
+            <Name>Bedirhan KURT</Name>
+            <Email>bedirhan.kurt@outlook.com</Email>
+        </Packager>
+        <Summary xml:lang="en">SAC PKCS#11 middleware</Summary>
+        <Description xml:lang="en">SAC (Safenet Authentication Client) is a PKCS#11 library that can be used to access different Gemalto smart cards from applications supporting the PKCS#11 API.</Description>
+        <Summary xml:lang="en">SAC PKCS#11 arayazılımı</Summary>
+        <Description xml:lang="en">SAC (Safenet Authentication Client/Safenet Kimlik Doğrulama İstemcisi), PKCS#11 API'sini destekleyen uygulamalardan farklı Gemalto akıllı kartlarına erişmek için kullanılan bir PKCS#11 kütüphanesidir.</Description>
+        <License>EULA</License>
+        <Archive type="binary" sha1sum="2bcf14608d53d925bfec2936e6ef6d943e11bd50">https://www.globalsign.com/en/safenet-drivers/USB/10.7/Safenet_Linux_Installer_DEB_x64.zip</Archive>
+    </Source>
+
+    <Package>
+        <Name>safenetauthenticationclient</Name>
+        <Dependencies>
+            <Dependency>libgcc</Dependency>
+            <Dependency>glib2</Dependency>
+            <Dependency>gtk2</Dependency>
+            <Dependency>pango</Dependency>
+            <Dependency>pcsc-lite</Dependency>
+            <Dependency>gdk-pixbuf</Dependency>
+            <Dependency>libX11</Dependency>
+            <Dependency>lsb-release</Dependency>
+            <Dependency>openssl-1.1</Dependency>
+        </Dependencies>
+        <Files>
+            <Path fileType="executable">/etc/init.d/safenetauthenticationclient</Path>
+            <Path fileType="data">/etc/eToken.common.conf</Path>
+            <Path fileType="data">/etc/eToken.conf</Path>
+            <Path fileType="executable">/usr/bin/</Path>
+            <Path fileType="executable">/usr/lib/SAC/SACUIProcess</Path>
+            <Path fileType="library">/usr/lib/</Path>
+            <Path fileType="doc">/usr/share/doc/</Path>
+            <Path fileType="data">/usr/share/</Path>
+        </Files>
+        <Provides>
+            <COMAR script="package.py">System.Package</COMAR>
+            <COMAR script="service.py">System.Service</COMAR>
+        </Provides>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2025-05-14</Date>
+            <Version>10.7.77</Version>
+            <Comment>Initial Packaging for PISI</Comment>
+            <Name>Bedirhan KURT</Name>
+            <Email>bedirhan.kurt@outlook.com</Email>
+        </Update>
+    </History>
+</PISI>
